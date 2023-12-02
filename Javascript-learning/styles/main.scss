@@ -1,0 +1,73 @@
+@import "./variables";
+@import "./reset";
+
+h1 {
+  text-align: $center-alignment;
+}
+.cards-container {
+  margin: 2rem 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.cards-container__card {
+  min-width: 25%;
+  margin: 0 1rem 1rem 0;
+  height: auto;
+  background: $card-background-color;
+  border: 1px solid $font-color;
+  box-shadow: $box-shadow;
+}
+.cards-container__card-data {
+  padding: 1rem;
+  .card-data-header {
+    font-weight: map-get($font-weights, bold);
+  }
+}
+.hide {
+  display: none;
+}
+.click-details {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: $font-color;
+  background-color: $click-details-bg-fade;
+}
+.onclick-content {
+  background-color: $onclick-content-background;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid $onclick-content-border-color;
+  width: 70%;
+}
+.close {
+  color: $close-button-color;
+  float: right;
+  font-size: 1.75rem;
+  font-weight: bold;
+  padding: 1rem;
+}
+.close:hover,
+.close:focus {
+  color: $font-color;
+  text-decoration: none;
+  cursor: pointer;
+}
+.footer-text {
+  span {
+    margin: 0 1rem 0 0;
+  }
+  margin: 1rem 0 0 1rem;
+  font-weight: map-get($font-weights, regular);
+}
+
+@media screen and (max-width: 500px) {
+  .cards-container {
+    display: block;
+  }
+}
